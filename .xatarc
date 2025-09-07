@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Vishal-Rajput-s-workspace-fi83he.ap-southeast-2.xata.sh/db/manCder",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
