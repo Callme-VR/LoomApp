@@ -1,6 +1,7 @@
 import { ICONS } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
+import DropdownList from "./DropdownList";
 
 export default function Header({ subHeader, title, userImg }: SharedHeaderProps) {
     return (
@@ -9,7 +10,7 @@ export default function Header({ subHeader, title, userImg }: SharedHeaderProps)
                 <div className="details">
                     {userImg && (
                         <Image
-                            src={userImg || "assets/images/dummy.jpg"}
+                            src={userImg}
                             alt="image"
                             width={66}
                             height={66}
@@ -49,7 +50,7 @@ export default function Header({ subHeader, title, userImg }: SharedHeaderProps)
                     <input type="text" placeholder="Search for videos,folder tags" />
                     <Image src={"/assets/icons/search.svg"} alt="search" width={15} height={15} />
                 </div>
-                {`<dropdownList/>`}
+                <DropdownList/>
             </section>
         </header>
     );
