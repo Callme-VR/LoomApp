@@ -1,9 +1,11 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
+const user = {};
 export default function Navbar() {
-
-    const user = {};
+    const router = useRouter();
     return (
         <header className="navbar">
             <nav>
@@ -16,11 +18,11 @@ export default function Navbar() {
                 {
                     user && (
                         <figure>
-                            <button>
+                            <button onClick={() => router.push('/profile/1234')}>
                                 <Image className=" rounded-full aspect-square" src={"/assets/images/dummy.jpg"} alt="image" width={36} height={36} />
                             </button>
                             <button className="cursor-pointer">
-                                <Image  className="rotate-180"src={"assets/icons/logout.svg"} alt="logo" width={35} height={35} />
+                                <Image className="rotate-180" src={"assets/icons/logout.svg"} alt="logo" width={35} height={35} />
                             </button>
                         </figure>
                     )
