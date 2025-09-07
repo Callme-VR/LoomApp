@@ -59,10 +59,3 @@ export const verification = pgTable("verification", {
     .$onUpdate(() => /* @__PURE__ */ new Date())
     .notNull(),
 });
-
-export const schema = {
-  user,
-  account,
-  session,
-  verification,
-};

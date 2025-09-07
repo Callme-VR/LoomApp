@@ -11,8 +11,8 @@ const DatabaseClient = buildClient();
 const defaultOptions = {
   databaseURL:
     "https://Vishal-Rajput-s-workspace-fi83he.ap-southeast-2.xata.sh/db/manCder",
-    apikey:process.env.XATA_API_KEY,
-    branch:'main'
+    apiKey: process.env.XATA_API_KEY,
+    branch: 'main'
 };
 
 export class XataClient extends DatabaseClient<DatabaseSchema> {

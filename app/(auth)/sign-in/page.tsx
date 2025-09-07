@@ -1,7 +1,15 @@
+"use client";
+import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Signin() {
+
+  const handleSignin = async () => {
+    return await authClient.signIn.social({ provider: 'google' })
+
+  }
+
   return (
     <main className="sign-in">
       <aside className="testimonial">
@@ -45,8 +53,8 @@ export default function Signin() {
             </h1>
           </Link>
           <p>Create and share your very first video <span>ManRcder</span> in Free mode and enjoy Recording with loved ones</p>
-          <button>
-            <Image src={"/assets/icons/google.svg"} alt="logo"  width={34} height={34}/>
+          <button onClick={handleSignin}>
+            <Image src={"/assets/icons/google.svg"} alt="logo" width={34} height={34} />
             <span>Sign-in with Google</span>
           </button>
         </section>
