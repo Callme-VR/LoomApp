@@ -6,7 +6,7 @@ interface FileInputProps {
     label?: string;
     file?: File | null;
     previewUrl?: string | null;
-    inputRef?: React.RefObject<HTMLInputElement>;
+    inputRef?: React.RefObject<HTMLInputElement | null>;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
     onReset?: () => void;
     type?: string;

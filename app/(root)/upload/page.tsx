@@ -2,6 +2,8 @@
 
 import FileInput from "@/components/FileInput";
 import FormField from "@/components/FormField";
+import { MAX_THUMBNAIL_SIZE, MAX_VIDEO_SIZE } from "@/constants";
+import { useFileInput } from "@/lib/hooks/useFileInput";
 import { ChangeEvent, useState } from "react";
 
 export default function page() {
@@ -19,6 +21,8 @@ export default function page() {
         const { name, value } = e.target;
         setFormData((prevState) => ({ ...prevState, [name]: value }));
     };
+    const video = useFileInput(MAX_VIDEO_SIZE);
+    const thumbnail = useFileInput(MAX_THUMBNAIL_SIZE);
 
     return (
         <div className="wrapper-md upload-page">
@@ -61,6 +65,11 @@ export default function page() {
                     label="Video"
                     type="video"
                     accept="video/*"
+                    file={video.file}
+                    previewUrl={video.previewURL}
+                    inputRef={video.inputRef}
+                    onChange={video.handleChange}
+                    onReset={video.resetFile}
                 />
 
                 <FileInput
@@ -68,6 +77,11 @@ export default function page() {
                     label="Thumbnail"
                     type="image"
                     accept="image/*"
+                    file={thumbnail.file}
+                    previewUrl={thumbnail.previewURL}
+                    inputRef={thumbnail.inputRef}
+                    onChange={thumbnail.handleChange}
+                    onReset={thumbnail.resetFile}
                 />
             </form>
         </div>
