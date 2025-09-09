@@ -29,16 +29,31 @@ export default function page() {
         setError(null);
 
         try {
+
             // Add your form submission logic here
             // For example: await uploadVideo(formData, video.file, thumbnail.file);
+            if (!video.file || !thumbnail.file) {
+                setError("Please select a video and a thumbnail");
+                return;
+            }
+            if (!formData.title || !formData.description) {
+                setError("please fille out all detail fileds");
+                return;
+            }
+
             console.log("Form submitted:", formData);
+
+
+            // upload video and thumbnail to db
+            // attached thumbnail
+            // create new db entry for video detail
         } catch (err) {
             setError(err instanceof Error ? err.message : "An error occurred");
         } finally {
             setIsSubmitting(false);
         }
     };
-
+    
     const video = useFileInput(MAX_VIDEO_SIZE);
     const thumbnail = useFileInput(MAX_THUMBNAIL_SIZE);
 

@@ -7,6 +7,7 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint"
+    
   },
   "dependencies": {
     "@xata.io/client": "0.0.0-next.v93343b9646f57a1e5c51c35eccf0767c2bb80baa",
